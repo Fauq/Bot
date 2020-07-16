@@ -4,6 +4,7 @@ module.exports = {
     name: 'kick',
     description: "this is a kick command",
     execute(message, args){
+    (async() => {
     if(!msg.member.hasPermission('KICK_MEMBERS')) return msg.reply('You can\'t use that!');
 
     var user = msg.mentions.users.first();
@@ -46,4 +47,5 @@ module.exports = {
 
     msg.channel.send(`**${user}** has been kicked by **${msg.author}**!`);
 }
-    }
+    )
+}};
