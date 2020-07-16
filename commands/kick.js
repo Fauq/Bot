@@ -1,6 +1,8 @@
 var Discord = require('discord.js');
 
 module.exports = {
+    name: 'kick',
+    description: "this is a kick command",
     execute(message, args){
     exports.run = async(client, msg, args) => {
     if(!msg.member.hasPermission('KICK_MEMBERS')) return msg.reply('You can\'t use that!');
