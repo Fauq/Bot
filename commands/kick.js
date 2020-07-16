@@ -22,7 +22,7 @@ module.exports = {
             .addField('Kicked by', message.author)
             .addField('Reason', reason)
             .addField('Date', message.createdAt)
-            .setColor(r);
+            .setColor("RANDOM");
  
             message.channel.send(x);
             toKick.kick();
