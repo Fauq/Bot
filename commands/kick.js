@@ -4,7 +4,6 @@ module.exports = {
     name: 'kick',
     description: "this is a kick command",
     execute(message, args){
-        (async() => {
         if(!message.member.hasPermission('KICK_MEMBERS')) return message.channel.send("You don't have permission to kick members.");
         let toKick = message.mentions.members.first();
         let reason = args.slice(1).join(" ");
@@ -31,7 +30,7 @@ module.exports = {
         let embed = new Discord.MessageEmbed()
         .setTitle('You were kicked!')
         .setDescription(reason);
-
+        (async() => {
         try {
             await user.send(embed);
         } catch(err) {
