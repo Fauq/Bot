@@ -30,13 +30,10 @@ module.exports = {
         let embed = new Discord.MessageEmbed()
         .setTitle('You were kicked!')
         .setDescription(reason);
-        (async() => {
-        try {
-            await user.send(embed);
-        } catch(err) {
-            console.warn(err);
+        user.send(embed);
+        {
+        
         }
     }
-        )
 }
-}
+
