@@ -5,26 +5,26 @@ module.exports = {
     description: "this is a kick command",
     execute(message, args){
         if(!message.member.hasPermission('KICK_MEMBERS')) return message.channel.send("You don't have permission to kick members.");
-        let toKick = msg.mentions.members.first();
+        let toKick = message.mentions.members.first();
         let reason = args.slice(1).join(" ");
-        if(!args[0]) return msg.channel.send('Please mention someone to kick');
-        if(!toKick) return msg.channel.send(`${args[0]} is not a member.`);
-        if(!reason) return msg.channel.send('Specify a reason.');
+        if(!args[0]) return message.channel.send('Please mention someone to kick');
+        if(!toKick) return message.channel.send(`${args[0]} is not a member.`);
+        if(!reason) return message.channel.send('Specify a reason.');
  
         if(!toKick.kickable){
-            return msg.channel.send(':x: I cannot kick someone that is mod/admin. :x:');
+            return message.channel.send(':x: I cannot kick someone that is mod/admin. :x:');
         }
  
         if(toKick.kickable){
             let x = new Discord.MessageEmbed()
             .setTitle('Kick')
             .addField('Member Kicked', toKick)
-            .addField('Kicked by', msg.author)
+            .addField('Kicked by', message.author)
             .addField('Reason', reason)
-            .addField('Date', msg.createdAt)
+            .addField('Date', message.createdAt)
             .setColor(r);
  
-            msg.channel.send(x);
+            message.channel.send(x);
             toKick.kick();
         }
     }
