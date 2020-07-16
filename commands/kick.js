@@ -4,48 +4,28 @@ module.exports = {
     name: 'kick',
     description: "this is a kick command",
     execute(message, args){
-    (async() => {
-    if(!msg.member.hasPermission('KICK_MEMBERS')) return msg.reply('You can\'t use that!');
-
-    var user = msg.mentions.users.first();
-    if(!user) return msg.reply('You didn\'t mention anyone!');
-
-    var member;
-
-    try {
-        member = await msg.guild.members.fetch(user);
-    } catch(err) {
-        member = null;
+        if(!msg.member.hasPermission('KICK_MEMBERS')) return msg.channel.send("You don't have permission to kick members.");
+        let toKick = msg.mentions.members.first();
+        let reason = args.slice(1).join(" ");
+        if(!args[0]) return msg.channel.send('Please mention someone to kick');
+        if(!toKick) return msg.channel.send(`${args[0]} is not a member.`);
+        if(!reason) return msg.channel.send('Specify a reason.');
+ 
+        if(!toKick.kickable){
+            return msg.channel.send(':x: I cannot kick someone that is mod/admin. :x:');
+        }
+ 
+        if(toKick.kickable){
+            let x = new Discord.MessageEmbed()
+            .setTitle('Kick')
+            .addField('Member Kicked', toKick)
+            .addField('Kicked by', msg.author)
+            .addField('Reason', reason)
+            .addField('Date', msg.createdAt)
+            .setColor(r);
+ 
+            msg.channel.send(x);
+            toKick.kick();
+        }
     }
-
-    if(!member) return msg.reply('They aren\'t in the server!');
-    if(member.hasPermission('KICK_MEMBERS')) return msg.reply('You cannot kick this person!');
-
-    var reason = args.splice(1).join(' ');
-    if(!reason) return msg.reply('You need to give a reason!');
-
-    var channel = msg.guild.channels.cache.find(c => c.name === 'potato');
-
-    var log = new Discord.MessageEmbed()
-    .setTitle('User Kicked')
-    .addField('User:', user, true)
-    .addField('By:', msg.author, true)
-    .addField('Reason:', reason)
-    channel.send(log);
-
-    var embed = new Discord.MessageEmbed()
-    .setTitle('You were kicked!')
-    .setDescription(reason);
-
-    try {
-        await user.send(embed);
-    } catch(err) {
-        console.warn(err);
-    }
-
-    member.kick(reason);
-
-    msg.channel.send(`**${user}** has been kicked by **${msg.author}**!`);
 }
-    )
-}};
