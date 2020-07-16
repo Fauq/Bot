@@ -1,10 +1,10 @@
-var Discord = require('discord.js');
+const Discord = require('discord.js');
 
 module.exports = {
     name: 'kick',
     description: "this is a kick command",
     execute(message, args){
-        if(!msg.member.hasPermission('KICK_MEMBERS')) return msg.channel.send("You don't have permission to kick members.");
+        if(!message.member.hasPermission('KICK_MEMBERS')) return message.channel.send("You don't have permission to kick members.");
         let toKick = msg.mentions.members.first();
         let reason = args.slice(1).join(" ");
         if(!args[0]) return msg.channel.send('Please mention someone to kick');
