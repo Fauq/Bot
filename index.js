@@ -36,7 +36,10 @@ client.on('message', (message)=>{
         client.commands.get('kick').execute(message, args);
     } else if (command == 'ppsize'){
         client.commands.get('ppsize').execute(message, args);
+    } else if (command == 'howgay'){
+        client.commands.get('howgay').execute(message, args);
     }
+
 
 
 
