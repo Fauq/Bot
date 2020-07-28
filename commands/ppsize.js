@@ -4,7 +4,7 @@ module.exports = {
     name: 'ppsize',
     description: "this is a ppsize command",
     execute(message, args){
-        let replies = ["8D.", "8=D", "8==D", "8===D", "8====D", "8=====D", "8======D", "8=======D", "8========D"];
+        let replies = ["8D", "8=D", "8==D", "8===D", "8====D", "8=====D", "8======D", "8=======D", "8========D", "8=========D", "8==========D"];
 
         let result = Math.floor((Math.random() * replies.length));
         let ballembed = new Discord.MessageEmbed()
