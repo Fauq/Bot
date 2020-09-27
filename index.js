@@ -11,6 +11,7 @@ for (const file of commandFiles){
 
 client.on('ready', ()=>{
     console.log("Bot is online.");
+    bot.user.setActivity('discord.gg/rrc', { type: 'WATCHING'});
 })
 
 client.on('message', (message)=>{
