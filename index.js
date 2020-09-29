@@ -37,6 +37,8 @@ client.on('message', (message)=>{
         client.commands.get('kick').execute(message, args);
     } else if (command == 'ppsize'){
         client.commands.get('ppsize').execute(message, args);
+    } else if (command == 'poll'){
+        client.commands.get('poll').execute(message, args);
     } 
 
 
