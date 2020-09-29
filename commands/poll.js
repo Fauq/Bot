@@ -10,7 +10,7 @@ module.exports = {
         let pollDescription = args.slice(1).join(' ');
 
         const embedPoll = new MessageEmbed()
-         .setTitle('New Poll!')
+         .setTitle('New Poll')
          .setDescription(pollDescription)
          .setColor('YELLOW')
         let msgEmbed = await pollChannel.send(embedPoll);
