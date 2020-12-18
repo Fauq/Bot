@@ -67,10 +67,7 @@ client.on('message', (message)=>{
 
 )
 
-client.on('guildMemberAdd', member => {
-    var role = member.guild.roles.find("id", 678044782143995906);
-    member.addRole(role);
-})
+
 
 
 client.login(process.env.token);
