@@ -15,7 +15,6 @@ module.exports = {
                 { name: '8ball', value: 'Play 8ball', inline: true },
             )
             .addField('Meme', 'Sends a random meme', false)
-            .addField('Group', 'Shows the robux payout group', false)
         message.channel.send(embed);
     }
 }

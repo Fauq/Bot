@@ -22,9 +22,6 @@ client.on('message', (message)=>{
 
     if(command === 'ping'){
         client.commands.get('ping').execute(message, args);
-    } else if (command == 'group'){
-        message.delete();
-        client.commands.get('group').execute(message, args);
     } else if (command == '8ball'){
         client.commands.get('8ball').execute(message, args);
     } else if (command == 'members'){
