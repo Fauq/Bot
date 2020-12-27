@@ -36,7 +36,13 @@ client.on('message', (message)=>{
         client.commands.get('ppsize').execute(message, args);
     } else if (command == 'poll'){
         client.commands.get('poll').execute(message, args);
-    } 
+    } else if (command == '3invites'){
+        client.commands.get('3invites').execute(message, args);
+    } else if (command == '5invites'){
+        client.commands.get('5invites').execute(message, args);
+    } else if (command == '10invites'){
+        client.commands.get('10invites').execute(message, args);
+    }
 
 
 
