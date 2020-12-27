@@ -46,6 +46,9 @@ client.on('message', (message)=>{
     } else if (command == '10invites'){
         message.delete();
         client.commands.get('10invites').execute(message, args);
+    } else if (command == 'level10'){
+        message.delete();
+        client.commands.get('level10').execute(message, args);
     }
 
 
