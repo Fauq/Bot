@@ -5,7 +5,7 @@ module.exports = {
         message.channel.send('Calculating ping...').then(resultMessage => {
             const ping = resultMessage.createdTimestamp - message.createdTimestamp
 
-            message.channel.send(`Bot latency: ${ping}, API Latency: ${client.ws.ping}`)
+            resultMessage.edit(`Bot latency: ${ping}, API Latency: ${client.ws.ping}`)
     })
         
     }
