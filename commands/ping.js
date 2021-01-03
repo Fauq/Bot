@@ -1,12 +1,7 @@
 module.exports = {
     name: 'ping',
-    description: "this is a ping command",
-    execute: (message, args) => {
-        message.channel.send('Calculating ping...').then(resultMessage => {
-            const ping = resultMessage.createdTimestamp - message.createdTimestamp
-
-            resultMessage.edit(`Bot latency: ${ping}, API Latency: ${client.ws.ping}`)
-    })
-        
+    execute(message, args){
+        message.channel.send(`Your Ping is ${Date.now() - message.createdTimestamp} ms`)
     }
 }
+ 
