@@ -52,6 +52,7 @@ exports.run = async (client, message, args) => {
             timeRemaining: "Time remaining: **{duration}**!",
             inviteToParticipate: "React with 🎉 to participate!",
             winMessage: "Congratulations, {winners}! You won **{prize}**!",
+            embedFooter: "Giveaways",
             noWinner: "Giveaway cancelled, no valid participations.",
             hostedBy: "Hosted by: {user}",
             winners: "winner(s)",
