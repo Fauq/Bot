@@ -26,10 +26,6 @@ exports.run = async (client, message, args) => {
 
     // Reroll the giveaway
     client.giveawaysManager.reroll(giveaway.messageID)
-    .then(() => {
-        // Success message
-        message.channel.send('Giveaway rerolled!');
-    })
     .catch((e) => {
         if(e.startsWith(`Giveaway with message ID ${giveaway.messageID} is not ended.`)){
             message.channel.send('This giveaway is not ended!');
