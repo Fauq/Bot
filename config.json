@@ -1,4 +1,5 @@
 {
+    "prefix": "*",
     "everyoneMention": false,
     "hostedBy": true
 }
