@@ -3,7 +3,7 @@ const ms = require('ms');
 exports.run = async (client, message, args) => {
 
     // If the member doesn't have enough permissions
-    if(!message.member.hasPermission('SEND_MESSAGES') && !message.member.roles.cache.some((r) => r.name === "Giveaways")){
+    if(!message.member.hasPermission('MANAGE_MESSAGES') && !message.member.roles.cache.some((r) => r.name === "Giveaways")){
         return message.channel.send(':x: You need to have the manage messages permissions to start giveaways.');
     }
 
@@ -47,8 +47,8 @@ exports.run = async (client, message, args) => {
         hostedBy: client.config.hostedBy ? message.author : null,
         // Messages
         messages: {
-            giveaway: (client.config.everyoneMention ? "@everyone\n\n" : "")+"🎉 **GIVEAWAY** 🎉",
-            giveawayEnded: (client.config.everyoneMention ? "@everyone\n\n" : "")+"🎉 **GIVEAWAY ENDED** 🎉",
+            giveaway: "🎉 **GIVEAWAY** 🎉",
+            giveawayEnded: "🎉 **GIVEAWAY ENDED** 🎉",
             timeRemaining: "Time remaining: **{duration}**!",
             inviteToParticipate: "React with 🎉 to participate!",
             winMessage: "Congratulations, {winners}! You won **{prize}**!",
