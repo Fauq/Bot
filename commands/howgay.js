@@ -1,9 +1,7 @@
 const Discord = require("discord.js");
 
-module.exports = {
-    name: 'howgay',
-    description: "this is a howgay command",
-    execute(message, args){
+exports.run = async (client, message, args) => {
+
 
         let result = Math.floor(Math.random() * 100);
         let ballembed = new Discord.MessageEmbed()
@@ -13,5 +11,5 @@ module.exports = {
 
         message.channel.send(ballembed);
 
-}
-}
+};
+
